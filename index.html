@@ -121,6 +121,7 @@
       .cesko_channel_block_logo {
         width: 100%;
         height: auto;
+        object-fit: contain;
       }
 
       .cesko_channel_block p {
@@ -195,34 +196,28 @@
           link: "https://www.myvideo.ge/tv/caucasia",
         },
         {
-          logo: "images/euronews.png",
-          name: "Euro News",
-          link: "",
+          logo: "images/palitranews.png",
+          name: "PALITRANEWS",
+          link: "https://www.myvideo.ge/tv/palitra",
         },
         {
-          logo: "images/mtavari.png",
-          name: "Discovery Georgia HD",
-          link: "",
+          logo: "images/adjara.png",
+          name: "აჭარა",
+          link: "https://www.myvideo.ge/tv/adjara",
         },
         {
-          logo: "images/imedi.png",
-          name: "იმედი HD",
-          link: "",
+          logo: "images/maestro.png",
+          name: "მაესტრო",
+          link: "https://www.myvideo.ge/tv/maestro?id=8675453423",
         },
         {
-          logo: "images/teleskola.png",
-          name: "ტელესკოლა",
-          link: "",
-        },
-        {
-          logo: "images/silk.png",
-          name: "სილქ უნივერსალი",
-          link: "",
+          logo: "images/radioImedi.png",
+          name: "რადიო იმედი",
+          link: "https://www.myvideo.ge/tv/radioimedi",
         },
       ];
 
       const container = document.querySelector(".cesko_channels_list");
-
       channelListArray.forEach((item) => {
         const channelBlock = `  <a href="${item.link}">
                                 <div class="cesko_channel_block">
