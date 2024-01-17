@@ -10,32 +10,46 @@
     <div class="cesko_main_container">
       <!-- ცესკოს ლოგო და სათაური -->
       <div class="cesko_logo_title">
-        <img class="cesko_logo" src="./images/cesko_logo.png" alt="cesko_logo" />
-        <img class="cesko_title" src="./images/cesko_title.png" alt="cesko_title" />
+        <img
+          class="cesko_logo"
+          src="./images/cesko_logo.png"
+          alt="cesko_logo"
+        />
+        <img
+          class="cesko_title"
+          src="./images/cesko_title.png"
+          alt="cesko_title"
+        />
       </div>
 
       <!-- არხების ლისტი -->
       <div class="cesko_scrolling_container">
-        
         <div class="cesko_channels_list">
           <!-- აქ მოდის ჯავასკრიპტით დამეპილი ლისტი -->
         </div>
-
       </div>
-
     </div>
 
     <!-- სტილები -->
     <style>
+      @font-face {
+        font-family: "roboto_geo";
+        src: url("./ROBOTO__GEO_MT-WEBFONT.ttf");
+        /* font-display: swap; */
+      }
+
       .cesko_main_container {
         box-sizing: border-box;
-        background-color: #dbf1e4;
         height: 430px;
         width: 100%;
         display: flex;
         align-items: center;
         gap: 107px;
         padding: 40px 35px 40px 70px;
+
+        background-image: url("./images/background.png");
+        background-position: center;
+        background-size: cover;
       }
 
       .cesko_logo_title {
@@ -119,6 +133,7 @@
       }
 
       .cesko_channel_block p {
+        font-family: "roboto_geo" !important;
         color: #121212;
         width: 120px;
         text-align: center;
@@ -217,7 +232,7 @@
                                 <div class="cesko_channel_block">
 
                                     <div class="cesko_channel_block_logo_background">
-                                        <img class="cesko_channel_block_logo" src="${item.logo}" alt="cesko block channel logo" loading="lazy"/>
+                                        <img loading="lazy" src="${item.logo}" class="cesko_channel_block_logo" alt="cesko block channel logo" />
                                     </div>
 
                                     <p>
