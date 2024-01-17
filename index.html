@@ -74,7 +74,7 @@
       }
 
       .cesko_scrolling_container::-webkit-scrollbar-thumb {
-        background-color: #266733;
+        background-color: #abb2ac;
         border-radius: 6px;
       }
 
@@ -87,13 +87,56 @@
       }
 
       .cesko_channels_list {
+        box-sizing: border-box;
+        padding: 37px 0;
         height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
         gap: 50px;
+      }
+
+      .cesko_channel_block {
+        width: 159.73px;
+        height: 150px;
+        border-radius: 11px;
+        background: hsla(0, 0%, 100%, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cesko_channel_block_logo_background {
+        width: 64px;
+        height: 64px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 24px;
+      }
+
+      .cesko_channel_block_logo {
+        width: 100%;
+        height: auto;
+      }
+
+      .cesko_channel_block p {
+        color: #121212;
+        width: 120px;
+        text-align: center;
+        font-family: "Roboto", "_GEO", "Mt";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
       }
     </style>
 
@@ -104,86 +147,96 @@
         {
           logo: "images/channelico.png",
           name: "პირველი TV",
+          link: "https://www.myvideo.ge/tv/pirvelitv",
         },
         {
-          logo: "images/gds.png",
-          name: "GDS",
+          logo: "images/mtavari.png",
+          name: "მთავარი არხი",
+          link: "https://www.myvideo.ge/tv/mtavari",
         },
         {
           logo: "images/rustavi2.png",
           name: "რუსთავი 2",
+          link: "https://www.myvideo.ge/tv/rustavi2hqnew",
+        },
+        {
+          logo: "images/gpbhd.png",
+          name: "პირველი არხი HD",
+          link: "https://www.myvideo.ge/tv/gpbhd",
         },
         {
           logo: "images/euronews.png",
-          name: "Euro News",
-        },
-        {
-          logo: "images/mtavari.png",
-          name: "Discovery Georgia HD",
+          name: "EuroNews Georgia",
+          link: "https://www.myvideo.ge/tv/euronewsgeorgia",
         },
         {
           logo: "images/imedi.png",
           name: "იმედი HD",
-        },
-        {
-          logo: "images/teleskola.png",
-          name: "ტელესკოლა",
+          link: "https://www.myvideo.ge/tv/imedihd",
         },
         {
           logo: "images/silk.png",
           name: "სილქ უნივერსალი",
+          link: "https://www.myvideo.ge/tv/silk_sport4",
         },
         {
-          logo: "images/channelico.png",
-          name: "პირველი TV",
+          logo: "images/posttv.png",
+          name: "პოსTV",
+          link: "https://www.myvideo.ge/tv/postv",
         },
         {
-          logo: "images/gds.png",
-          name: "GDS",
+          logo: "images/formula.png",
+          name: "ფორმულა",
+          link: "https://www.myvideo.ge/tv/formula",
         },
         {
-          logo: "images/rustavi2.png",
-          name: "რუსთავი 2",
+          logo: "images/caucasus.png",
+          name: "კავკასია",
+          link: "https://www.myvideo.ge/tv/caucasia",
         },
         {
           logo: "images/euronews.png",
           name: "Euro News",
+          link: "",
         },
         {
           logo: "images/mtavari.png",
           name: "Discovery Georgia HD",
+          link: "",
         },
         {
           logo: "images/imedi.png",
           name: "იმედი HD",
+          link: "",
         },
         {
           logo: "images/teleskola.png",
           name: "ტელესკოლა",
+          link: "",
         },
         {
           logo: "images/silk.png",
           name: "სილქ უნივერსალი",
+          link: "",
         },
       ];
 
       const container = document.querySelector(".cesko_channels_list");
 
       channelListArray.forEach((item) => {
-        const channelBlock = `
-                                <div style="width: 159.73px; height: 150px; border-radius: 11px;
-                                            background: hsla(0, 0%, 100%, 0.4); display: flex; flex-direction: column; align-items: center; ">
+        const channelBlock = `  <a href="${item.link}">
+                                <div class="cesko_channel_block">
 
-                                    <div style="width: 64px; height: 64px; background-color: #fff; display: flex; align-items: center; justify-content: center; margin-top:24px">
-                                        <img src="${item.logo}" alt="cesko block channel logo" />
+                                    <div class="cesko_channel_block_logo_background">
+                                        <img class="cesko_channel_block_logo" src="${item.logo}" alt="cesko block channel logo" />
                                     </div>
 
-                                    <p style="color: #121212; width: 120px; text-align:center; font-family: 'Roboto', '_GEO', 'Mt'; 
-                                            font-size: 16px; font-style: normal; font-weight: 400; line-height: normal;">
+                                    <p>
                                     ${item.name}
                                     </p>
 
                                 </div>
+                                </a>
                             `;
 
         container.innerHTML += channelBlock;
